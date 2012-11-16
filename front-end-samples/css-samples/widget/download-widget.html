@@ -1,0 +1,283 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>Progress bar</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<meta name="viewport" content="width=device-width">
+
+	<link rel="stylesheet" href="../../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../css/bootstrap-responsive.min.css">
+  <script src="../../js/libs/jquery-1.7.2.min.js"></script>
+  
+	<style>
+body {
+font: 12px/20px "Lucida Grande", Tahoma, Verdana, sans-serif;
+color: #404040;
+background: #47496D;
+background-image: -webkit-radial-gradient(bottom, circle cover, #6B6E8C, #212649);
+background-image: -moz-radial-gradient(bottom, circle cover, #6B6E8C, #212649);
+background-image: -o-radial-gradient(bottom, circle cover, #6B6E8C, #212649);
+background-image: radial-gradient(bottom, circle cover, #6B6E8C, #212649);
+}
+
+div, h3, h4, ul, li {
+margin: 0;
+padding: 0;
+border: 0;
+font-size: 100%;
+font: inherit;
+vertical-align: baseline;
+}
+
+ol, ul {
+list-style: none;
+}
+
+[class*="icon-"] {
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-image: url("download-widget/sprite.png");
+  background-repeat: no-repeat;
+  background-color: transparent;
+  font: 0/0 serif;
+  text-shadow: none;
+  color: transparent;
+}
+
+.icon-psd-40 {
+  background-position: 0 0;
+}
+
+.icon-ai-24 {
+  background-position: -40px 0;
+}
+
+.icon-close {
+  background-position: -40px -24px;
+}
+
+.widget {
+  margin: 10px auto;
+  width: 280px;
+  overflow: hidden;
+  background: #fafafa;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+}
+
+.widget-heading {
+  position: relative;
+  z-index: 2;
+  padding: 8px;
+  height: 24px;
+  background: #eee;
+  border-radius: 4px 4px 0 0;
+  background-image: -webkit-linear-gradient(top, #eeeeee, #d8d8d8);
+  background-image: -moz-linear-gradient(top, #eeeeee, #d8d8d8);
+  background-image: -o-linear-gradient(top, #eeeeee, #d8d8d8);
+  background-image: linear-gradient(to bottom, #eeeeee, #d8d8d8);
+  -webkit-box-shadow: inset 0 21px rgba(255, 255, 255, 0.22);
+  box-shadow: inset 0 21px rgba(255, 255, 255, 0.22);
+}
+
+.widget-title {
+  float: left;
+  line-height: 24px;
+  padding: 0 6px;
+  font-size: 13px;
+  font-weight: bold;
+  color: #666;
+  text-transform: uppercase;
+  text-shadow: 0 1px rgba(255, 255, 255, 0.3);
+}
+
+.widget-close {
+  float: right;
+  margin: 0 1px 0 10px;
+  padding: 3px 3px 3px 4px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.3);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.3);
+}
+.widget-close:hover {
+  border-color: rgba(0, 0, 0, 0.18);
+  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+}
+.widget-close:active {
+  background-color: rgba(0, 0, 0, 0.02);
+  -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+.widget-toolbar {
+  position: relative;
+  height: 18px;
+  line-height: 18px;
+  padding: 6px 0;
+  background: #5c5c5c;
+  background-image: -webkit-linear-gradient(top, #878787, #5c5c5c);
+  background-image: -moz-linear-gradient(top, #878787, #5c5c5c);
+  background-image: -o-linear-gradient(top, #878787, #5c5c5c);
+  background-image: linear-gradient(to bottom, #878787, #5c5c5c);
+  -webkit-box-shadow: inset 0 1px rgba(0, 0, 0, 0.25), inset 0 2px rgba(255, 255, 255, 0.2), 0 0 2px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 1px rgba(0, 0, 0, 0.25), inset 0 2px rgba(255, 255, 255, 0.2), 0 0 2px rgba(0, 0, 0, 0.5);
+}
+.widget-toolbar > li {
+  float: left;
+}
+.widget-toolbar > li > a {
+  display: block;
+  padding: 0 12px;
+  font-size: 11px;
+  color: white;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.5);
+}
+.widget-toolbar > li + li {
+  border-left: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: inset 1px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: inset 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.download {
+  line-height: 21px;
+  padding: 3px 15px;
+  color: #999;
+  text-shadow: 0 1px white;
+  background: white;
+  background-image: -webkit-linear-gradient(top, white, #fafafa);
+  background-image: -moz-linear-gradient(top, white, #fafafa);
+  background-image: -o-linear-gradient(top, white, #fafafa);
+  background-image: linear-gradient(to bottom, white, #fafafa);
+}
+.download + .download {
+  border-top: 1px solid #ececec;
+}
+.download:last-child {
+  border-radius: 0 0 4px 4px;
+}
+
+.download-name {
+  margin: 2px 0;
+  font-weight: normal;
+}
+
+.download-icon {
+  float: left;
+  width: 24px;
+  height: 24px;
+  margin: 0 12px 0 0;
+}
+
+.download-info {
+  line-height: 16px;
+  font-size: 11px;
+}
+
+.download-active {
+  padding: 8px 12px;
+}
+.download-active .download-name {
+  margin: 0;
+  font-weight: bold;
+  color: #333;
+}
+.download-active .download-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.download-progress {
+  clear: left;
+  margin: 12px 10px 4px;
+  height: 8px;
+  padding: 3px;
+  background: #ebebeb;
+  border-radius: 7px;
+  -webkit-box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.2), 0 1px white;
+  box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.2), 0 1px white;
+}
+
+.download-progress-bar {
+  height: 100%;
+  background: #73c822;
+  border: 1px solid;
+  border-color: #6eb626 #62a21f #5a9122;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-image: -webkit-linear-gradient(top, #73c822, #67aa24);
+  background-image: -moz-linear-gradient(top, #73c822, #67aa24);
+  background-image: -o-linear-gradient(top, #73c822, #67aa24);
+  background-image: linear-gradient(to bottom, #73c822, #67aa24);
+  -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.15);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.15);
+}
+
+.lt-ie9 .widget-close {
+  border: 1px solid #c4c4c4;
+}
+.lt-ie9 .widget-close:hover {
+  background: #d8d8d8;
+}
+.lt-ie9 .widget-toolbar {
+  border-top-color: #484848;
+}
+  </style>
+</head>
+<body id="sample">
+  
+  <section class="widget">
+    <div class="widget-heading">
+      <h3 class="widget-title">File Downloads</h3>
+      <a href="#" class="widget-close"><span class="icon-close">Close</span></a>
+    </div>
+
+    <ul class="widget-toolbar">
+      <li><a href="#">Open downloads folder</a></li>
+      <li><a href="#">Clear all</a></li>
+    </ul>
+
+    <ul class="downloads">
+      <li class="download download-active">
+        <span class="icon-psd-40 download-icon"></span>
+        <h4 class="download-name">Home-Comp.psd</h4>
+        <p class="download-info">4.8 of 15MB - 162KB/sec - 1 min</p>
+        <div class="download-progress">
+          <div class="download-progress-bar" style="width: 32%"></div>
+        </div>
+      </li>
+      <li class="download">
+        <span class="icon-ai-24 download-icon"></span>
+        <h4 class="download-name">Revised-Logo.png</h4>
+      </li>
+      <li class="download">
+        <span class="icon-ai-24 download-icon"></span>
+        <h4 class="download-name">Original-Logo.png</h4>
+      </li>
+    </ul>
+  </section>
+  
+  <h3 style="font-size: 24.5px; color: white; font-weight: bold; margin: 10px 0; text-align: center;">
+    <a class="btn btn-small embeded" href="./index.html">Retour</a>
+    Download widget
+    <small><a href="http://www.webinterfacelab.com/snippets/file-download-widget" target="download-widget">from webinterfacelab</a></small>
+  </h3>
+  <script>
+    $(function() {
+      if(window.location.href.indexOf("embeded") != -1){
+        $('.embeded').hide();
+      }
+    });
+  </script>
+</body>
+</html>

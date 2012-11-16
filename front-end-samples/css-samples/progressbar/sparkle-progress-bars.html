@@ -1,9 +1,26 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>Progress bar</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<meta name="viewport" content="width=device-width">
+
+	<link rel="stylesheet" href="../../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../css/bootstrap-responsive.min.css">
+  <script src="../../js/libs/jquery-1.7.2.min.js"></script>
+  
+	<style>
 @import url(http://fonts.googleapis.com/css?family=Aldrich);
 
-#sparkle-progress-bars .demo {
+#sparkle-progress-bars {
     background:#333;
 }
-#sparkle-progress-bars .demo .progressbar{
+#sparkle-progress-bars .progressbar{
     position:relative;
     display:block;
     width:560px;
@@ -15,7 +32,7 @@
     -webkit-box-shadow: 0px 4px 4px -4px rgba(255, 255, 255, 0.4),0px -3px 3px -3px rgba(255, 255, 255, 0.25),inset 0px 0px 12px 0px rgba(0, 0, 0, 0.5);
     box-shadow: 0px 4px 4px -4px rgba(255, 255, 255, 0.4),0px -3px 3px -3px rgba(255, 255, 255, 0.25),inset 0px 0px 12px 0px rgba(0, 0, 0, 0.5);
 }
-#sparkle-progress-bars .demo .progressbar:before{
+#sparkle-progress-bars .progressbar:before{
     position:absolute;
     display:block;
     content:"";
@@ -30,7 +47,7 @@
     box-shadow: inset 0px 0px 6px 0px rgba(0, 0, 0, 0.85);
 	border:1px solid rgba(0,0,0,0.8);
 }
-#sparkle-progress-bars .demo .bar {
+#sparkle-progress-bars .bar {
 	position:absolute;
 	display:block;
 	width:0px;
@@ -41,7 +58,7 @@
 	border-radius:16px;
 	overflow:hidden;
 }
-#sparkle-progress-bars .demo .bar.vert {
+#sparkle-progress-bars .bar.vert {
     background: rgb(126,234,25);
 	background: -moz-linear-gradient(top,  rgba(126,234,25,1) 0%, rgba(83,173,0,1) 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(126,234,25,1)), color-stop(100%,rgba(83,173,0,1)));
@@ -53,7 +70,7 @@
 	-webkit-box-shadow: 0px 0px 12px 0px rgba(126, 234, 25, 1),inset 0px 1px 0px 0px rgba(255, 255, 255, 0.45),inset 1px 0px 0px 0px rgba(255, 255, 255, 0.25),inset -1px 0px 0px 0px rgba(255, 255, 255, 0.25);
 	box-shadow: 0px 0px 12px 0px rgba(126, 234, 25, 1),inset 0px 1px 0px 0px rgba(255, 255, 255, 0.45),inset 1px 0px 0px 0px rgba(255, 255, 255, 0.25),inset -1px 0px 0px 0px rgba(255, 255, 255, 0.25);
 }
-#sparkle-progress-bars .demo .bar.jaune {
+#sparkle-progress-bars .bar.jaune {
 	background: rgb(229,195,25);
 	background: -moz-linear-gradient(top,  rgba(229,195,25,1) 0%, rgba(168,140,0,1) 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(229,195,25,1)), color-stop(100%,rgba(168,140,0,1)));
@@ -65,7 +82,7 @@
 	-webkit-box-shadow: 0px 0px 12px 0px rgba(229, 195, 25, 1),inset 0px 1px 0px 0px rgba(255, 255, 255, 0.45),inset 1px 0px 0px 0px rgba(255, 255, 255, 0.25),inset -1px 0px 0px 0px rgba(255, 255, 255, 0.25);
 	box-shadow: 0px 0px 12px 0px rgba(229, 195, 25, 1),inset 0px 1px 0px 0px rgba(255, 255, 255, 0.45),inset 1px 0px 0px 0px rgba(255, 255, 255, 0.25),inset -1px 0px 0px 0px rgba(255, 255, 255, 0.25);
 }
-#sparkle-progress-bars .demo .bar.rouge {
+#sparkle-progress-bars .bar.rouge {
 	background: rgb(232,25,87);
 	background: -moz-linear-gradient(top,  rgba(232,25,87,1) 0%, rgba(170,0,51,1) 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(232,25,87,1)), color-stop(100%,rgba(170,0,51,1)));
@@ -77,7 +94,7 @@
 	-webkit-box-shadow: 0px 0px 12px 0px rgba(232, 25, 87, 1),inset 0px 1px 0px 0px rgba(255, 255, 255, 0.45),inset 1px 0px 0px 0px rgba(255, 255, 255, 0.25),inset -1px 0px 0px 0px rgba(255, 255, 255, 0.25);
 	box-shadow: 0px 0px 12px 0px rgba(232, 25, 87, 1),inset 0px 1px 0px 0px rgba(255, 255, 255, 0.45),inset 1px 0px 0px 0px rgba(255, 255, 255, 0.25),inset -1px 0px 0px 0px rgba(255, 255, 255, 0.25);
 }
-#sparkle-progress-bars .demo .bar.bleu {
+#sparkle-progress-bars .bar.bleu {
 	background: rgb(24,109,226);
 	background: -moz-linear-gradient(top,  rgba(24,109,226,1) 0%, rgba(0,69,165,1) 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(24,109,226,1)), color-stop(100%,rgba(0,69,165,1)));
@@ -89,7 +106,7 @@
 	-webkit-box-shadow: 0px 0px 12px 0px rgba(24, 109, 226, 1),inset 0px 1px 0px 0px rgba(255, 255, 255, 0.45),inset 1px 0px 0px 0px rgba(255, 255, 255, 0.25),inset -1px 0px 0px 0px rgba(255, 255, 255, 0.25);
 	box-shadow: 0px 0px 12px 0px rgba(24, 109, 226, 1),inset 0px 1px 0px 0px rgba(255, 255, 255, 0.45),inset 1px 0px 0px 0px rgba(255, 255, 255, 0.25),inset -1px 0px 0px 0px rgba(255, 255, 255, 0.25);
 }
-#sparkle-progress-bars .demo .bar:before {
+#sparkle-progress-bars .bar:before {
 	position:absolute;
 	display:block;
 	content:"";
@@ -105,7 +122,7 @@
 	background: radial-gradient(ellipse at center,  rgba(255,255,255,0.35) 0%,rgba(255,255,255,0.01) 50%,rgba(255,255,255,0) 51%,rgba(255,255,255,0) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#59ffffff', endColorstr='#00ffffff',GradientType=1 );
 }
-#sparkle-progress-bars .demo .bar:after {
+#sparkle-progress-bars .bar:after {
 	position:absolute;
 	display:block;
 	content:"";
@@ -123,7 +140,7 @@
 	background: linear-gradient(to right,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.6) 98%,rgba(255,255,255,0) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#00ffffff',GradientType=1 );
 }
-#sparkle-progress-bars .demo .bar span {
+#sparkle-progress-bars .bar span {
 	position:absolute;
 	display:block;
 	width:100%;
@@ -139,7 +156,7 @@
     animation: sparkle 1500ms linear infinite;
 	opacity:0.2;
 }
-#sparkle-progress-bars .demo .label {
+#sparkle-progress-bars .label {
 	font-family: 'Aldrich', sans-serif;
 	position:absolute;
 	display:block;
@@ -168,7 +185,7 @@
 	text-shadow: 0px -1px 0px #000000,0px 1px 1px #000000;
     filter: dropshadow(color=#000000, offx=0, offy=-1);
 }
-#sparkle-progress-bars .demo .label span {
+#sparkle-progress-bars .label span {
 	position:absolute;
 	display:block;
 	width:12px;
@@ -178,7 +195,7 @@
 	background:transparent;
 	overflow:hidden;
 }
-#sparkle-progress-bars .demo .label span:before {
+#sparkle-progress-bars .label span:before {
 	position:absolute;
 	display:block;
 	content:"";
@@ -219,3 +236,61 @@
 	from {background-position: 0 0;}
 	to {background-position: 0 -64px;}
 }
+  </style>
+</head>
+<body id="sparkle-progress-bars">
+  <div class="progressbar" data-perc="100">
+      <div class="bar"><span></span></div>
+      <div class="label"><span></span></div>
+  </div>
+  <div class="progressbar" data-perc="80">
+      <div class="bar vert"><span></span></div>
+      <div class="label"><span></span></div>
+  </div>
+  <div class="progressbar" data-perc="60">
+      <div class="bar jaune"><span></span></div>
+      <div class="label"><span></span></div>
+  </div>
+  <div class="progressbar" data-perc="40">
+      <div class="bar rouge"><span></span></div>
+      <div class="label"><span></span></div>
+  </div>
+  <div class="progressbar" data-perc="20">
+      <div class="bar bleu"><span></span></div>
+      <div class="label"><span></span></div>
+  </div>
+  <script>
+      $(function() {
+          $('#sparkle-progress-bars .progressbar').each(function(){
+              var t = $(this),
+                  dataperc = t.attr('data-perc'),
+                  barperc = Math.round(dataperc*5.56);
+              t.find('.bar').animate({width:barperc}, dataperc*25);
+              t.find('.label').append('<div class="perc"></div>');
+              
+              function perc() {
+                  var length = t.find('.bar').css('width'),
+                      perc = Math.round(parseInt(length)/5.56),
+                      labelpos = (parseInt(length)-2);
+                  t.find('.label').css('left', labelpos);
+                  t.find('.perc').text(perc+'%');
+              }
+              perc();
+              setInterval(perc, 0); 
+          });
+      });
+  </script>
+  <h3 style="color: white; text-align: center;">
+    <a class="btn btn-small btn-inverse embeded" href="./index.html">Retour</a>
+    Sparkle Progress Bars
+    <small><a href="http://cssdeck.com/labs/nice-sparkle-progress-bars" target="sparkle-progress-bars">from cssdeck</a></small>
+  </h3>
+  <script>
+    $(function() {
+      if(window.location.href.indexOf("embeded") != -1){
+        $('.embeded').hide();
+      }
+    });
+  </script>
+</body>
+</html>
