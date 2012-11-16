@@ -1,0 +1,989 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>Front-end samples</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<meta name="viewport" content="width=device-width">
+
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<style>
+	body {
+	  padding-top: 60px;
+	  padding-bottom: 40px;
+	}
+    dl dd {
+        margin-bottom: 10px;
+    }
+	</style>
+	<link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+	
+    <!-- tests de design -->
+    <style>
+.box-content {
+margin-top: -1px;
+padding: 10px;
+border: 1px solid #DDD;
+background: #FCFCFC;
+-webkit-border-radius: 0px 0px 2px 2px;
+-moz-border-radius: 0px 0px 2px 2px;
+border-radius: 0px 0px 2px 2px;
+-webkit-box-shadow: 0 1px 0px rgba(255, 255, 255, .6);
+-moz-box-shadow: 0 1px 0px rgba(255, 255, 255, .6);
+box-shadow: 0 1px 0px rgba(255, 255, 255, .6);
+}
+ul.tickets {
+margin: 0;
+}
+ul.tickets li {
+list-style: none;
+padding: 5px 0;
+border-top: 1px solid white;
+border-bottom: 1px solid #EBEBEB;
+font-size: 12px;
+}
+ul.tickets li:first-child {
+border-top: none;
+border-bottom: 1px solid #EBEBEB;
+}
+ul.tickets li:last-child {
+border-bottom: none;
+}
+ul.tickets li.ticket .header {
+width: 100%;
+display: inline-block;
+font-weight: bold;
+font-size: 13px;
+}
+ul.tickets li.ticket .header .title {
+float: left;
+text-align: left;
+}
+ul.tickets li.ticket .header .number {
+float: right;
+text-align: right;
+}
+ul.tickets li.ticket .content {
+display: inline-block;
+width: 100%;
+}
+ul.tickets li.ticket .avatar img {
+height: 36px;
+width: 36px;
+padding: 1px;
+float: left;
+margin-top: 1px;
+margin-right: 10px;
+border: 1px solid #EBEBEB;
+}
+ul.tickets li.ticket .content .name, ul.tickets li.ticket .content .status {
+float: left;
+text-align: left;
+width: 50%;
+}
+ul.tickets li.ticket .content .priority, ul.tickets li.ticket .content .date {
+float: right;
+text-align: right;
+}
+ul.tickets a {color: #646464;}
+ul.tickets .red {color: #FA603D;}
+ul.tickets .blue {color: #67C2EF;}
+ul.tickets .yellow {color: #FABB3D;}
+ul.tickets .green {color: #78CD51;}
+
+
+ul.comments {
+margin: 0;
+}
+ul.comments li {
+list-style: none;
+padding: 5px 0;
+border-top: 1px solid white;
+border-bottom: 1px solid #EBEBEB;
+font-size: 12px;
+}
+ul.comments li:first-child {
+border-top: none;
+border-bottom: 1px solid #EBEBEB;
+}
+ul.comments li:last-child {
+border-bottom: none;
+}
+ul.comments li.comment .header {
+width: 100%;
+display: inline-block;
+font-weight: bold;
+font-size: 13px;
+}
+ul.comments li.comment .header .name {
+float: left;
+text-align: left;
+}
+ul.comments li.comment .header .date {
+float: right;
+text-align: right;
+margin-left: 5px;
+}
+ul.comments li.comment .header .priority {
+float: right;
+text-align: right;
+font-weight: normal;
+}
+ul.comments li.comment .content {
+display: inline-block;
+width: 100%;
+}
+ul.comments li.comment .content .text {
+float: left;
+text-align: left;
+}
+ul.comments {color: #646464;}
+ul.comments .red {color: #FA603D;}
+ul.comments .blue {color: #67C2EF;}
+ul.comments .yellow {color: #FABB3D;}
+ul.comments .green {color: #78CD51;}
+.comment-form {
+border-top: 1px solid #DDD;
+background: #EEE;
+padding: 10px;
+margin: 20px -10px -10px -10px;
+}
+.comment-form textarea {
+width: 100%;
+padding: 0.5em;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+height: 80px;
+outline: 0px !important;
+font-size: 12px;
+}
+
+
+.box-header {
+height: 20px;
+border: 1px solid #DDD;
+margin-bottom: -1px;
+padding: 10px;
+background-color: #FAFAFA;
+background-image: -moz-linear-gradient(top, #FAFAFA, #EFEFEF);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#FAFAFA), to(#EFEFEF));
+background-image: -webkit-linear-gradient(top, #FAFAFA, #EFEFEF);
+background-image: -o-linear-gradient(top, #FAFAFA, #EFEFEF);
+background-image: linear-gradient(to bottom, #FAFAFA, #EFEFEF);
+filter: progid:dximagetransform.microsoft.gradient(startColorstr='#fafafa', endColorstr='#efefef', GradientType=0);
+-webkit-box-shadow: none;
+-moz-box-shadow: none;
+box-shadow: none;
+-webkit-border-radius: 2px 2px 0px 0px;
+-moz-border-radius: 2px 2px 0px 0px;
+border-radius: 2px 2px 0px 0px;
+overflow: hidden;
+}
+.box-header h2 {
+font-size: 16px;
+line-height: 16px;
+float: left;
+margin-top: 2px;
+color: #646464;
+font-weight: normal;
+text-shadow: 0px 1px 0px white;
+}
+.box-header h2 i {
+margin: 1px 3px 0px 5px;
+opacity: .4;
+}
+.box-header .break {
+border-left: 1px solid #FCFCFC;
+border-right: 1px solid #DDD;
+margin: -12px 10px -10px 10px;
+padding: 12px 0px 10px 0px;
+}
+
+
+
+.stat-boxes, .quick-actions, .quick-actions-horizontal, .stats-plain {
+display: inline-block;
+list-style: none outside none;
+margin: 20px 0 10px;
+text-align: center;
+}
+.stat-boxes li, .quick-actions li, .quick-actions-horizontal li {
+background-color: #F6F6F6;
+background-image: -webkit-gradient(linear, 0 0%, 0 100%, from(#F9F9F9), to(#EDEDED));
+background-image: -webkit-linear-gradient(top, #F9F9F9 0%, #EDEDED 100%);
+background-image: -moz-linear-gradient(top, #F9F9F9 0%, #EDEDED 100%);
+background-image: -ms-linear-gradient(top, #F9F9F9 0%, #EDEDED 100%);
+background-image: -o-linear-gradient(top, #F9F9F9 0%, #EDEDED 100%);
+background-image: linear-gradient(top, #F9F9F9 0%, #EDEDED 100%);
+border: 1px solid #D5D5D5;
+border-radius: 4px 4px 4px 4px;
+box-shadow: 0 1px 0 0 white inset, 0 1px 0 rgba(255, 255, 255, 0.4);
+display: inline-block;
+line-height: 18px;
+margin: 0 10px 10px;
+padding: 0 10px;
+}
+.stat-boxes .left {
+border-right: 1px solid gainsboro;
+box-shadow: 1px 0 0 0 white;
+margin-right: 12px;
+padding: 10px 14px 6px 4px;
+font-size: 10px;
+font-weight: bold;
+}
+.stat-boxes .right {
+font-size: 12px;
+padding: 9px 10px 7px 0;
+text-align: center;
+width: 70px;
+color: #666;
+}
+.stat-boxes .left, .stat-boxes .right {
+text-shadow: 0 1px 0 white;
+float: left;
+}
+.stat-boxes .left span, .stat-boxes .right strong {
+display: block;
+}
+.stat-boxes .right strong {
+font-size: 26px;
+margin-bottom: 3px;
+margin-top: 6px;
+}
+.stat-boxes .peity_bar_good, .stat-boxes .peity_line_good {
+color: #459D1C;
+}
+
+
+.quick-actions li {
+min-width: 120px;
+}
+.quick-actions li a {
+padding: 10px 30px;
+}
+.quick-actions li a i[class^="icon-"], .quick-actions li a i[class*=" icon-"] {
+background-repeat: no-repeat;
+background-attachment: scroll;
+background-position: 0 0;
+background-color: transparent;
+width: 32px;
+height: 32px;
+display: block;
+margin: 0 auto 5px;
+}
+.quick-actions i.icon-calendar {
+background-image: url('http://wbpreview.com/previews/WB0F35928/img/icons/32/calendar.png');
+}
+
+
+.quick-actions li a, .quick-actions-horizontal li a {
+text-align: center !important;
+display: block;
+color: #666;
+text-shadow: 0 1px 0 white;
+}
+.quick-actions-horizontal li a i[class^="icon-"], .quick-actions-horizontal li a i[class*=" icon-"] {
+background-repeat: no-repeat;
+background-attachment: scroll;
+background-position: center;
+background-color: transparent;
+width: 16px;
+height: 16px;
+display: inline-block;
+margin: -2px 0 0 !important;
+border-right: 1px solid #DDD;
+margin-right: 10px;
+padding: 10px;
+vertical-align: middle;
+}
+.quick-actions-horizontal i.icon-calendar {
+background-image: url('http://wbpreview.com/previews/WB0F35928/img/icons/16/calendar.png');
+}
+.quick-actions-horizontal li a span {
+padding: 10px 12px 10px 10px;
+display: inline-block;
+}
+
+
+
+.shortcuts {
+text-align: center;
+}
+.shortcuts .shortcut {
+width: 121px;
+display: inline-block;
+padding: 12px 0;
+margin: 0 .9% 1em;
+vertical-align: top;
+text-decoration: none;
+background: #F3F3F3;
+border-radius: 5px;
+}
+.shortcuts .shortcut:hover {
+background: #E8E8E8;
+}
+.shortcuts .shortcut .shortcut-icon {
+margin-top: .25em;
+margin-bottom: .25em;
+font-size: 32px;
+color: #888;
+}
+.shortcuts .shortcut-label {
+display: block;
+font-weight: 400;
+color: #666;
+}
+
+
+
+.list-widget {
+border: 1px solid #DDD;
+border-radius: 3px;
+padding: 15px;
+position: relative;
+border-top: 1px solid #EEE;
+background: white;
+}
+.list-widget .avatar {
+margin-top: 2px;
+border-radius: 40px;
+}
+.list-widget .list-head {
+margin-left: 60px;
+}
+.list-widget h3 {
+font-weight: normal;
+color: #DD390D;
+font-size: 20px;
+line-height: 1.3;
+margin: 0;
+}
+.list-widget h3 a {
+font-weight: normal;
+color: #DD390D;
+}
+.list-widget .list-meta {
+color: #777;
+margin-top: 0px;
+font-size: 13px;
+}
+.list-widget .list-meta a {
+font-weight: normal;
+color: #111;
+}
+.list-widget .list-head .list-follow {
+position: absolute;
+top: 20px;
+right: 15px;
+margin: 0;
+}
+.list-follow {
+display: none;
+}
+.list-widget ul {
+list-style: none;
+margin: 15px -15px 0;
+padding: 0px 10px;
+position: relative;
+}
+.list-widget ul li {
+margin: 10px 10px;
+font-size: 14px;
+height: 20px;
+overflow: hidden;
+}
+.list-widget ul li .fav {
+float: left;
+vertical-align: text-top;
+background-position: 0 4px;
+height: 20px;
+background-position: 0;
+height: 16px;
+width: 16px;
+margin: 2px 0px 0 3px;
+}
+.list-widget ul li > div {
+margin-left: 30px;
+}
+.list-widget ul li a {
+color: #111;
+font-weight: normal;
+}
+.list-widget ul li .list-view {
+margin: 10px 0 0 30px;
+padding-top: 10px;
+color: #DD390D;
+}
+
+
+
+
+.sef-component {
+border: 1px solid #DDD;
+border-radius: 3px;
+padding: 15px;
+position: relative;
+border-top: 1px solid #EEE;
+background: white;
+}
+.sef-component .list-head {
+margin-left: 10px;
+}
+.sef-component .list-head h3 {
+font-weight: normal;
+color: #DD390D;
+font-size: 20px;
+line-height: 1.3;
+margin: 0;
+}
+.sef-component .list-head h3 .label {
+position: relative;
+top: -2px;
+}
+.sef-component .list-meta {
+color: #777;
+margin-top: 0px;
+font-size: 13px;
+}
+.sef-component .list-meta .name {
+font-weight: normal;
+color: #111;
+}
+.sef-component ul {
+list-style: none;
+margin: 15px -15px 0;
+padding: 0px 10px;
+position: relative;
+}
+.sef-component ul li {
+margin: 10px 10px;
+font-size: 14px;
+}
+.sef-component ul li > i {
+float: left;
+margin: 3px 0px 0 3px;
+}
+.sef-component ul li > div {
+margin-left: 30px;
+}
+.sef-component ul li .detail {
+color: #111;
+font-weight: normal;
+font-style: italic;
+}
+.sef-component ul li .list-view {
+margin: 10px 0 0 30px;
+padding-top: 10px;
+color: #DD390D;
+}
+
+
+
+.state-indicator {
+display: inline-block;
+list-style: none outside none;
+margin: 0px;
+text-align: center;
+}
+.state-indicator > div {
+background-color: #F6F6F6;
+background-image: -webkit-gradient(linear, 0 0%, 0 100%, from(#F9F9F9), to(#EDEDED));
+background-image: -webkit-linear-gradient(top, #F9F9F9 0%, #EDEDED 100%);
+background-image: -moz-linear-gradient(top, #F9F9F9 0%, #EDEDED 100%);
+background-image: -ms-linear-gradient(top, #F9F9F9 0%, #EDEDED 100%);
+background-image: -o-linear-gradient(top, #F9F9F9 0%, #EDEDED 100%);
+background-image: linear-gradient(top, #F9F9F9 0%, #EDEDED 100%);
+border: 1px solid #D5D5D5;
+border-radius: 4px 4px 4px 4px;
+box-shadow: 0 1px 0 0 white inset, 0 1px 0 rgba(255, 255, 255, 0.4);
+display: inline-block;
+line-height: 18px;
+margin: 0 10px 10px;
+padding: 0 10px;
+
+text-align: center !important;
+display: block;
+color: #666;
+text-shadow: 0 1px 0 white;
+}
+.state-indicator > div .left {
+width: 16px;
+height: 16px;
+display: inline-block;
+margin: -3px 0px 0px -6px;
+border-right: 1px solid #DDD;
+padding: 8px;
+vertical-align: middle;
+}
+.state-indicator > div .right {
+padding: 8px;
+display: inline-block;
+}
+
+
+
+
+
+.box-header .box-icon {
+float: right;
+margin-top: 1px;
+}
+.box-header .box-icon a {
+margin: 0px 5px;
+}
+.box-header .box-icon i {
+-webkit-transition: all 0.1s ease-in-out;
+-moz-transition: all 0.1s ease-in-out;
+-o-transition: all 0.1s ease-in-out;
+-ms-transition: all 0.1s ease-in-out;
+transition: all 0.1s ease-in-out;
+opacity: .4;
+}
+.tab-menu.nav-tabs {
+border-bottom: none;
+}
+.tab-menu.nav-tabs {
+margin-top: -52px;
+margin-right: 90px;
+}
+.tab-menu.nav-tabs > li {
+margin-bottom: -1px;
+}
+.tab-menu.nav-tabs > li {
+float: right;
+}
+.tab-menu.nav-tabs > li > a {
+padding-top: 10px;
+padding-bottom: 10px;
+line-height: 20px;
+margin-left: -3px;
+border-left: 1px solid #DDD;
+border-right: 1px solid #DDD;
+-webkit-border-radius: 0px;
+-moz-border-radius: 0px;
+border-radius: 0px;
+color: #646464;
+}
+
+
+    </style>
+</head>
+<body>
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a class="brand" href="#">Front-end Samples</a>
+        <div class="nav-collapse">
+          <ul class="nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="js-samples.html">JS samples</a></li>
+            <li><a href="css-samples.html">CSS samples</a></li>
+            <li class="active"><a href="experiments.html">experiments</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+        <div class="span12">
+            <h2>Samples</h2>
+            <p>
+                Here a example of front-end implementations
+            </p>
+        </div>
+    </div>
+  
+    <div class="row" id="tests">
+        
+    </div>
+    <div class="row" id="tabs">
+        <div class="box span12">
+            <div class="box-header">
+                <h2>
+                    <i class="icon-th"></i><span class="break"></span>
+                    Tabs
+                </h2>
+                <div class="box-icon">
+                    <a href="#" class="btn-setting"><i class="icon-wrench"></i></a>
+                    <a href="#" class="btn-minimize"><i class="icon-chevron-up"></i></a>
+                    <a href="#" class="btn-close"><i class="icon-remove"></i></a>
+                </div>
+            </div>
+            <div class="box-content">
+                <ul class="nav tab-menu nav-tabs" id="myTab">
+                    <li class=""><a href="#info">Info</a></li>
+                    <li class=""><a href="#custom">Custom</a></li>
+                    <li class="active"><a href="#messages">Messages</a></li>
+                </ul>
+                 
+                <div id="myTabContent" class="tab-content">
+                    <div class="tab-pane" id="info">
+                        <p>
+
+                            Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.   
+                        </p>
+
+                    </div>
+                    <div class="tab-pane" id="custom">
+                        <p>
+                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   
+                        </p>
+                    </div>
+                    <div class="tab-pane active" id="messages">
+                        <p>
+                            Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.   
+                        </p>
+                        <p>
+                            Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="row" id="content-block">
+        <div class="span4">
+            <div class="list-widget">
+                <a href="/Miki" title="Miki"><img src="https://secure.gravatar.com/avatar/fbc93d9de3ab94605312d8fb38e0d244/?default=https%3A%2F%2Fkippt.com%2Fstatic%2Fimg%2Fdefault-avatar.jpg&amp;s=160" width="42" height="42" class="avatar" style="float:left"></a>
+                <div class="list-head">
+                    <h3><a href="/Miki/thoughts-worth-sharing">Thoughts worth sharing</a></h3>
+                    <div class="list-meta">by <a href="/Miki">Miki</a> · 273 followers</div>
+                    <a href="#" class="list-follow btn" data-api-uri="/api/lists/14258/">Follow</a>
+                </div>
+                <ul>
+                    <li>
+                        <i class="fav" style="background-image:url('https://www.google.com/s2/u/0/favicons?domain=en.wikipedia.org');"></i>
+                        <div><a href="/Miki/thoughts-worth-sharing">John Lennon</a></div>
+                    </li>
+                    <li>
+                        <i class="fav" style="background-image:url('https://www.google.com/s2/u/0/favicons?domain=en.wikipedia.org');"></i>
+                        <div><a href="/Miki/thoughts-worth-sharing">George Bernard Shaw</a></div>
+                    </li>
+                    <li>
+                        <i class="fav" style="background-image:url('https://www.google.com/s2/u/0/favicons?domain=en.wikipedia.org');"></i>
+                        <div><a href="/Miki/thoughts-worth-sharing">Zen Buddhist proverb</a></div>
+                    </li>
+                    <li><a href="/Miki/thoughts-worth-sharing" class="list-view">View all 12 clips ›</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="span8">
+            <div class="row">
+                <div class="span4">
+                    <div class="sef-component">
+                        <div class="list-head">
+                            <h3><span class="label label-success">Env</span> Description globale</h3>
+                            <div class="list-meta">créé par <span class="name">Loïc Knuchel</span> le 13 nov. 2012 16:07:20</div>
+                        </div>
+                        <ul>
+                            <li><i class="icon-align-justify" title="description"></i><div>Transfert de test. A déployer rapidement pour valider la chaine de traitement.</div><div class="clearfix"></div></li>
+                            <li><i class="icon-comment" title="commentaire"></i><div>Ce transfert sert pour la mise en place de tests d'intégration.</div><div class="clearfix"></div></li>
+                            <li><i class="icon-resize-horizontal" title="Taille du fichier"></i><div>petit (<10Mo)</div><div class="clearfix"></div></li>
+                            <li><i class="icon-upload" title="Format du fichier"></i><div>BIN</div><div class="clearfix"></div></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="span4">
+                    <div class="sef-component">
+                        <div class="list-head">
+                            <h3><span class="label label-success">Env</span> Source</h3>
+                            <div class="list-meta">Application <span class="name">ITPass (WebService)</span> sur <span class="name">clappmutual</span></div>
+                        </div>
+                        <ul>
+                            <li><i class="icon-user" title="Utilisateur / mot de passe"></i><div>loic / <span class="detail">toto</span></div><div class="clearfix"></div></li>
+                            <li><i class="icon-folder-close" title="Répertoire"></i><div>/tmp</div><div class="clearfix"></div></li>
+                            <li><i class="icon-file" title="Fichier"></i><div>hello.txt</div><div class="clearfix"></div></li>
+                            <li><i class="icon-gift" title="Commandes supplémentaires"></i><div></div><div class="clearfix"></div></li>
+                            <li><i class="icon-envelope" title="Contact"></i><div>Loïc<br/>loic@mail.com<br/>06.11.11.11.11</div><div class="clearfix"></div></li>
+                            <li><span class="list-view">Sortir en erreur en cas d'absence du fichier</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="row" id="shortcuts">
+        <!-- see http://wbpreview.com/previews/WB00U99JJ/ -->
+        <div class="span12">
+            <div class="shortcuts">
+                <a href="javascript:;" class="shortcut"><i class="shortcut-icon icon-list-alt"></i><span class="shortcut-label">Apps</span></a>
+                <a href="javascript:;" class="shortcut"><i class="shortcut-icon icon-bookmark"></i><span class="shortcut-label">Bookmarks</span></a>
+                <a href="javascript:;" class="shortcut"><i class="shortcut-icon icon-signal"></i><span class="shortcut-label">Reports</span></a>
+                <a href="javascript:;" class="shortcut"><i class="shortcut-icon icon-comment"></i><span class="shortcut-label">Comments</span></a>
+                <a href="javascript:;" class="shortcut"><i class="shortcut-icon icon-user"></i><span class="shortcut-label">Users</span></a>
+                <a href="javascript:;" class="shortcut"><i class="shortcut-icon icon-file"></i><span class="shortcut-label">Notes</span></a>
+                <a href="javascript:;" class="shortcut"><i class="shortcut-icon icon-picture"></i><span class="shortcut-label">Photos</span></a>
+                <a href="javascript:;" class="shortcut"><i class="shortcut-icon icon-tag"></i><span class="shortcut-label">Tags</span></a>				
+            </div>
+        </div>
+    </div>
+    <div class="row" id="stat-boxes">
+        <!-- see http://wbpreview.com/previews/WB0F35928/interface.html -->
+        <div class="span12">
+            <ul class="stat-boxes">
+                <li>
+                    <div class="left peity_bar_good"><span><span style="display: none;">2,4,9,7,12,10,12</span><canvas width="50" height="24"></canvas></span>+20%</div>
+                    <div class="right">
+                        <strong>36094</strong>
+                        Visits
+                    </div>
+                </li>
+                <li>
+                    <div class="left peity_bar_neutral"><span><span style="display: none;">20,15,18,14,10,9,9,9</span><canvas width="50" height="24"></canvas></span>0%</div>
+                    <div class="right">
+                        <strong>1433</strong>
+                        Users
+                    </div>
+                </li>
+                <li>
+                    <div class="left peity_bar_bad"><span><span style="display: none;">3,5,9,7,12,20,10</span><canvas width="50" height="24"></canvas></span>-50%</div>
+                    <div class="right">
+                        <strong>8650</strong>
+                        Orders
+                    </div>
+                </li>
+                <li>
+                    <div class="left peity_line_good"><span><span style="display: none;">12,6,9,23,14,10,17</span><canvas width="50" height="24"></canvas></span>+70%</div>
+                    <div class="right">
+                        <strong>8650</strong>
+                        Orders
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row" id="quick-actions">
+        <!-- see http://wbpreview.com/previews/WB0F35928/interface.html -->
+        <div class="span12">					
+            <ul class="quick-actions">
+                <li><a href="#"><i class="icon-calendar"></i>Manage Events</a></li>
+                <li><a href="#"><i class="icon-shopping-bag"></i>Manage Orders</a></li>
+                <li><a href="#"><i class="icon-database"></i>Manage DB</a></li>
+                <li><a href="#"><i class="icon-people"></i>Manage Users</a></li>
+                <li><a href="#"><i class="icon-lock"></i>Security</a></li>
+                <li><a href="#"><i class="icon-piechart"></i>Statistics</a></li>
+            </ul>
+        </div>	
+    </div>
+    <div class="row" id="quick-actions-horizontal">
+        <!-- see http://wbpreview.com/previews/WB0F35928/interface.html -->
+        <div class="span4">
+            <div class="state-indicator">
+                <div>
+                    <div class="left"><i class="icon-calendar"></i></div>
+                    <span class="right">Manage Events</span>
+                </div>
+            </div>
+        </div>
+        <div class="span8">					
+            <ul class="quick-actions-horizontal">
+                <li><a href="#"><i class="icon-calendar"></i><span>Manage Events</span></a></li>
+                <li><a href="#"><i class="icon-shopping-bag"></i><span>Manage Orders</span></a></li>
+                <li><a href="#"><i class="icon-database"></i><span>Manage DB</span></a></li>
+                <li><a href="#"><i class="icon-people"></i><span>Manage Users</span></a></li>
+                <li><a href="#"><i class="icon-lock"></i><span>Security</span></a></li>
+                <li><a href="#"><i class="icon-piechart"></i><span>Statistics</span></a></li>
+            </ul>
+        </div>	
+    </div>
+    <div class="row" id="tickets-comments">
+      <!-- see http://wbpreview.com/previews/WB0PHMG9K/index.html -->
+      <div class="span4">
+          <div class="box-content">
+              <ul class="tickets">
+                  <li class="ticket">
+                      <a href="#">
+                          <span class="header">
+                              <span class="title">Server unavaible</span>
+                              <span class="number">[ #199278 ]</span>
+                          </span>	
+                          <span class="content">
+                              <span class="avatar"><img src="http://placehold.it/40x40" alt="Avatar"></span>
+                              <span class="name">Ashley Tan</span>
+                              <span class="priority blue">[ Low priority ]</span>
+                              <span class="status">Status: <span class="green">[ Complete ]</span></span>
+                              <span class="date">Jul 25, 2012 11:09</span>
+                          </span>	                                                        
+                      </a>
+                  </li>
+                  <li class="ticket">
+                      <a href="#">
+                          <span class="header">
+                              <span class="title">Mobile App Problem</span>
+                              <span class="number">[ #199277 ]</span>
+                          </span>	
+                          <span class="content">
+                              <span class="avatar"><img src="http://placehold.it/40x40" alt="Avatar"></span>
+                              <span class="name">Ann Kovalsky</span>
+                              <span class="priority yellow">[ Normal priority ]</span>
+                              <span class="status">Status: <span class="yellow">[ Pending ]</span></span>
+                              <span class="date">Jul 25, 2012 11:09</span>
+                          </span>	                                                        
+                      </a>
+                  </li>
+                  <li class="ticket">
+                      <a href="#">
+                          <span class="header">
+                              <span class="title">PayPal issue</span>
+                              <span class="number">[ #199276 ]</span>
+                          </span>	
+                          <span class="content">
+                              <span class="avatar"><img src="http://placehold.it/40x40" alt="Avatar"></span>
+                              <span class="name">Chris Dan</span>
+                              <span class="priority red">[ High priority ]</span>
+                              <span class="status">Status: <span class="blue">[ In progress ]</span></span>
+                              <span class="date">Jul 25, 2012 11:09</span>
+                          </span>	                                                        
+                      </a>
+                  </li>
+                  <li class="ticket">
+                      <a href="#">
+                          <span class="header">
+                              <span class="title">IE7 problem</span>
+                              <span class="number">[ #199275 ]</span>
+                          </span>	
+                          <span class="content">
+                              <span class="avatar"><img src="http://placehold.it/40x40" alt="Avatar"></span>
+                              <span class="name">John Grand</span>
+                              <span class="priority blue">[ Low priority ]</span>
+                              <span class="status">Status: <span class="red">[ Rejected ]</span></span>
+                              <span class="date">Jul 25, 2012 11:09</span>
+                          </span>	                                                        
+                      </a>
+                  </li>
+                  <li class="ticket">
+                      <a href="#">
+                          <span class="header">
+                              <span class="title">Server unavaible</span>
+                              <span class="number">[ #199274 ]</span>
+                          </span>	
+                          <span class="content">
+                              <span class="avatar"><img src="http://placehold.it/40x40" alt="Avatar"></span>
+                              <span class="name">Agnes Young</span>
+                              <span class="priority blue">[ Low priority ]</span>
+                              <span class="status">Status: <span class="green">[ Complete ]</span></span>
+                              <span class="date">Jul 25, 2012 11:09</span>
+                          </span>	                                                        
+                      </a>
+                  </li>
+                  <li class="ticket">
+                      <a href="#">
+                          <span class="header">
+                              <span class="title">Mobile App Problem</span>
+                              <span class="number">[ #199273 ]</span>
+                          </span>	
+                          <span class="content">
+                              <span class="avatar"><img src="http://placehold.it/40x40" alt="Avatar"></span>
+                              <span class="name">Melanie Brown</span>
+                              <span class="priority yellow">[ Normal priority ]</span>
+                              <span class="status">Status: <span class="yellow">[ Pending ]</span></span>
+                              <span class="date">Jul 25, 2012 11:09</span>
+                          </span>	                                                        
+                      </a>
+                  </li>
+                  <li class="ticket">
+                      <a href="#">
+                          <span class="header">
+                              <span class="title">PayPal issue</span>
+                              <span class="number">[ #199272 ]</span>
+                          </span>	
+                          <span class="content">
+                              <span class="avatar"><img src="http://placehold.it/40x40" alt="Avatar"></span>
+                              <span class="name">Patricia Doyle</span>
+                              <span class="priority red">[ High priority ]</span>
+                              <span class="status">Status: <span class="blue">[ In progress ]</span></span>
+                              <span class="date">Jul 25, 2012 11:09</span>
+                          </span>	                                                        
+                      </a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+      <div class="span4">
+          <div class="box-header">
+              <h2><i class="icon-comment"></i><span class="break"></span>Commentaires</h2>
+          </div>
+          <div class="box-content">
+              <ul class="comments">
+                  <li class="comment">
+                      <span class="header">
+                          <span class="name">Loïc Knuchel</span>
+                          <span class="date">[ 10/12/2012 ]</span>
+                          <span class="priority blue">[ Validation ]</span>
+                      </span>	
+                      <span class="content">
+                          <span class="text">(demande de validation) Validation urgente pour la création de modèle. Le modèle doit fonctionner pour le 15/12/2012 !!! (désolé)</span>
+                      </span>
+                  </li>
+                  <li class="comment">
+                      <span class="header">
+                          <span class="name">Loïc Knuchel</span>
+                          <span class="date">[ 10/12/2012 ]</span>
+                      </span>	
+                      <span class="content">
+                          <span class="text">(commentaire normal) Validation urgente pour la création de modèle. Le modèle doit fonctionner pour le 15/12/2012 !!! (désolé)</span>
+                      </span>
+                  </li>
+                  <li class="comment">
+                      <span class="header">
+                          <span class="name">Loïc Knuchel</span>
+                          <span class="date">[ 10/12/2012 ]</span>
+                          <span class="priority red">[ Correction ]</span>
+                      </span>	
+                      <span class="content">
+                          <span class="text">(demande de correction) Validation urgente pour la création de modèle. Le modèle doit fonctionner pour le 15/12/2012 !!! (désolé)</span>
+                      </span>
+                  </li>
+                  <li class="comment">
+                      <span class="header">
+                          <span class="name">Loïc Knuchel</span>
+                          <span class="date">[ 10/12/2012 ]</span>
+                          <span class="priority yellow">[ Pris en charge ]</span>
+                      </span>	
+                      <span class="content">
+                          <span class="text">(Prise en charge) Validation urgente pour la création de modèle. Le modèle doit fonctionner pour le 15/12/2012 !!! (désolé)</span>
+                      </span>
+                  </li>
+                  <li class="comment">
+                      <span class="header">
+                          <span class="name">Loïc Knuchel</span>
+                          <span class="date">[ 10/12/2012 ]</span>
+                          <span class="priority green">[ Terminé ]</span>
+                      </span>	
+                      <span class="content">
+                          <span class="text">(cloture) Validation urgente pour la création de modèle. Le modèle doit fonctionner pour le 15/12/2012 !!! (désolé)</span>
+                      </span>
+                  </li>
+              </ul>
+              <div class="comment-form">
+                  <textarea></textarea>
+                  <button class="btn btn-info">Send message</button>
+              </div>
+          </div>
+      </div>
+    </div>
+
+    <hr>
+    <footer>
+      <p>&copy; Company 2012</p>
+    </footer>
+  </div> <!-- /container -->
+    
+  <script src="js/libs/jquery-1.7.2.min.js"></script>
+  <script src="js/libs/bootstrap/bootstrap.min.js"></script>
+</body>
+</html>

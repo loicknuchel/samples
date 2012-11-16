@@ -1,0 +1,24 @@
+table.lib-sort-table thead tr .header {
+	background-image: url(bg.gif);
+	background-repeat: no-repeat;
+	background-position: center right;
+	cursor: pointer;
+}
+
+table.lib-sort-table thead tr .headerSortUp {
+	background-image: url(asc.gif);
+}
+
+table.lib-sort-table thead tr .headerSortDown {
+	background-image: url(desc.gif);
+}
+
+table.lib-sort-table thead tr th,table.lib-sort-table tfoot tr th {
+	background-color: #eee;
+	border: 1px solid white;
+}
+
+table.lib-sort-table thead tr .headerSortDown,table.lib-sort-table thead tr .headerSortUp
+	{
+	background-color: #ddd;
+}

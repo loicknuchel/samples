@@ -1,0 +1,107 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>Progress bar</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<meta name="viewport" content="width=device-width">
+
+	<link rel="stylesheet" href="../../css/bootstrap.min.css">
+	<style>
+	body {
+	  padding-top: 60px;
+	  padding-bottom: 40px;
+	}
+	</style>
+	<link rel="stylesheet" href="../../css/bootstrap-responsive.min.css">
+    
+    <script src="../../js/libs/jquery-1.7.2.min.js"></script>
+    
+    <!-- sparkle-progress-bars -->
+	<link rel="stylesheet" href="sparkle-progress-bars.css">
+    
+
+</head>
+<body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">Progress bar</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li><a href="../../css-samples.html">Home</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+        <div class="">
+            <div class="row" id="sparkle-progress-bars">
+                <div class="span12">
+                    <h3>Sparkle Progress Bars from cssdeck <small><a href="http://cssdeck.com/labs/nice-sparkle-progress-bars" target="sparkle-progress-bars">from cssdeck</a></small></h3>
+                    <div class="demo" style="padding: 5px; width: 700px;">
+                        <div class="progressbar" data-perc="100">
+                            <div class="bar"><span></span></div>
+                            <div class="label"><span></span></div>
+                        </div>
+                        <div class="progressbar" data-perc="80">
+                            <div class="bar vert"><span></span></div>
+                            <div class="label"><span></span></div>
+                        </div>
+                        <div class="progressbar" data-perc="60">
+                            <div class="bar jaune"><span></span></div>
+                            <div class="label"><span></span></div>
+                        </div>
+                        <div class="progressbar" data-perc="40">
+                            <div class="bar rouge"><span></span></div>
+                            <div class="label"><span></span></div>
+                        </div>
+                        <div class="progressbar" data-perc="20">
+                            <div class="bar bleu"><span></span></div>
+                            <div class="label"><span></span></div>
+                        </div>
+                        <script>
+                            $(function() {
+                                $('#sparkle-progress-bars .demo .progressbar').each(function(){
+                                    var t = $(this),
+                                        dataperc = t.attr('data-perc'),
+                                        barperc = Math.round(dataperc*5.56);
+                                    t.find('.bar').animate({width:barperc}, dataperc*25);
+                                    t.find('.label').append('<div class="perc"></div>');
+                                    
+                                    function perc() {
+                                        var length = t.find('.bar').css('width'),
+                                            perc = Math.round(parseInt(length)/5.56),
+                                            labelpos = (parseInt(length)-2);
+                                        t.find('.label').css('left', labelpos);
+                                        t.find('.perc').text(perc+'%');
+                                    }
+                                    perc();
+                                    setInterval(perc, 0); 
+                                });
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+        <footer>
+            <p>&copy; Company 2012</p>
+        </footer>
+
+    </div> <!-- /container -->
+</body>
+</html>

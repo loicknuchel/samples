@@ -1,0 +1,112 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>Arbres</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<meta name="viewport" content="width=device-width">
+
+	<link rel="stylesheet" href="../../css/bootstrap.min.css">
+	<style>
+	body {
+	  padding-top: 60px;
+	  padding-bottom: 40px;
+	}
+	</style>
+	<link rel="stylesheet" href="../../css/bootstrap-responsive.min.css">
+    
+    <script src="../../js/libs/jquery-1.7.2.min.js"></script>
+    
+    <!-- library -->
+	<link rel="stylesheet" href="dynatree/skin/ui.dynatree.css">
+    <script src="dynatree/jquery-ui.custom.min.js"></script>
+    <script src="dynatree/jquery.cookie.js"></script>
+    <script src="dynatree/jquery.dynatree.js"></script>
+    
+
+</head>
+<body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">Arbres</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li><a href="../../js-samples.html">Home</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+        <div class="">
+            <div class="row" id="library">
+                <div class="span12">
+                    <h3>Dynatree 1.2.2 <small><a href="http://code.google.com/p/dynatree/" target="dynatree">site officiel</a></small></h3>
+                    <div class="pull-left">
+                        <div id="dynatree1">
+                            <ul id="treeData" style="display: none;">
+                                <li id="id1" title="Look, a tool tip!">item1 with key and tooltip</li>
+                                <li id="id2">item2</li>
+                                <li id="id3" class="folder">Folder with some children
+                                    <ul>
+                                        <li id="id3.1">Sub-item 3.1
+                                            <ul>
+                                                <li id="id3.1.1">Sub-item 3.1.1</li>
+                                                <li id="id3.1.2">Sub-item 3.1.2</li>
+                                            </ul>
+                                        </li>
+                                        <li id="id3.2">Sub-item 3.2
+                                            <ul>
+                                                <li id="id3.2.1">Sub-item 3.2.1</li>
+                                                <li id="id3.2.2">Sub-item 3.2.2</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li id="id4" class="expanded">Document with some children (expanded on init)
+                                    <ul>
+                                        <li id="id4.1"  class="active focused">Sub-item 4.1 (active and focus on init)
+                                            <ul>
+                                                <li id="id4.1.1">Sub-item 4.1.1</li>
+                                                <li id="id4.1.2">Sub-item 4.1.2</li>
+                                            </ul>
+                                        </li>
+                                        <li id="id4.2">Sub-item 4.2
+                                            <ul>
+                                                <li id="id4.2.1">Sub-item 4.2.1</li>
+                                                <li id="id4.2.2">Sub-item 4.2.2</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <script>
+                            $(document).ready(function() {
+                                $("#dynatree1").dynatree();
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+        <footer>
+            <p>&copy; Company 2012</p>
+        </footer>
+
+    </div> <!-- /container -->
+</body>
+</html>
