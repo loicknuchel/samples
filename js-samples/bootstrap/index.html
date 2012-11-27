@@ -1,0 +1,578 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>Twitter bootstrap</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<meta name="viewport" content="width=device-width">
+
+	<style>
+	body {
+	  padding-top: 60px;
+	  padding-bottom: 40px;
+	}
+    #icons .the-icons li {
+        list-style: none;
+    }
+    #icons .the-icons li {
+        float: left;
+        width: 25%;
+        line-height: 25px;
+    }
+	</style>
+    <!-- styles -->
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap-responsive.css">
+    
+    <!-- scripts -->
+    <script src="../../js/libs/jquery-1.7.2.min.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+
+</head>
+<body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">Twitter Bootstrap 2.2.1</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li><a href="../../js-samples.html">Home</a></li>
+              <li><a href="#presentation">Présentation</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Widgets <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#buttons">Boutons</a></li>
+                  <li><a href="#modal">Modal</a></li>
+                  <li><a href="#typeahead">Typeahead</a></li>
+                  <li><a href="#accordion">Accordion</a></li>
+                  <li><a href="#tabs">Tab section</a></li>
+                  <li><a href="#messages">Messages</a></li>
+                  <li><a href="#icons">Icones</a></li>
+                  <li><a href="#progress-bar">Progress bar</a></li>
+                </ul>
+              </li>
+              <li><a href="http://twitter.github.com/bootstrap/" target="bootstrap">Site officiel</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+    
+        <h1 id="presentation">Présentation</h1>
+        <div class="">
+            <div class="row">
+                <div class="span12">
+                    see : 
+                        <a href="http://www.larentis.eu/bootstrap_toggle_buttons/">www.larentis.eu/bootstrap_toggle_buttons</a>, 
+                        <a href="http://www.boottheme.com">boottheme</a>, 
+                        <a href="http://antjanus.com/blog/web-design-tips/user-interface-usability/customize-twitter-bootstrap-into-themes/">customize twitter bootstrap into themes/</a>
+                        <a href="http://subtlepatterns.com/">subtlepatterns</a>
+                        <a href="http://stylebootstrap.info/">stylebootstrap</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="span6">
+                    <h3>Bootstrap extentions</h3>
+                    <dl>
+                        <dt><a href="http://bootsnipp.com/" target="bootsnipp">Bootsnipp</a></dt>
+                        <dd>Snippets with twitter bootstrap</dd>
+                        <dt><a href="https://wrapbootstrap.com/" target="wrapbootstrap">Wrapbootstrap</a></dt>
+                        <dd>Templates of site and admin backend based on bootstrap (for inspiration)</dd>
+                        <dt><a href="http://fortawesome.github.com/Font-Awesome/" target="Font-Awesome">Font-Awesome</a></dt>
+                        <dd>Extends bootstrap with more icons and colors</dd>
+                        <dt><a href="http://exacttarget.github.com/fuelux/">Fuel UX</a></dt>
+                        <dd>Extends bootstrap with more widgets (combobox, datagrid, pillbox...)</dd>
+                        <dt><a href="http://vitalets.github.com/bootstrap-editable/">Bootstrap Editable</a></dt>
+                        <dd>Allow to edit values with inline forms</dd>
+                        <dt><a href="http://bootswatch.com/" target="bootswatch">Bootswatch</a></dt>
+                        <dd>
+                            Styles variations for bootstrap 
+                            (other themes <a href="http://danneu.com/posts/4-darkstrap-css-a-dark-theme-for-twitter-bootstrap-2" target="darkstrap">darkstrap</a>)
+                        </dd>
+                    </dl>
+                </div>
+                <div class="span6">
+                    <h3>Bootstrap adaptations</h3>
+                    <dl>
+                        <dt><a href="http://addyosmani.github.com/jquery-ui-bootstrap/" target="jquery-ui-bootstrap">jquery-ui-bootstrap</a></dt>
+                        <dd>A bootstrap theme for jQueryUI</dd>
+                        <dt><a href="https://github.com/gwtbootstrap/gwt-bootstrap" target="gwt-bootstrap">gwt-bootstrap</a></dt>
+                        <dd>A bootstrap theme for GWT</dd>
+                        <dt><a href="https://github.com/nyao/bootstrap4gwt" target="gwt4bootstrap">gwt4bootstrap</a></dt>
+                        <dd>An other bootstrap theme for GWT</dd>
+                        <dt><a href="https://github.com/commadelimited/jQuery-Mobile-Bootstrap-Theme" target="jquerymobile">jQuery Mobile</a></dt>
+                        <dd>An bootstrap theme for jQuery Mobile</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+
+        <hr/><br/>
+        <h1 id="widgets">Bootstrap widgets</h1>
+        <div class="">
+            <div class="row" id="buttons">
+                <div class="span12">
+                    <h3>Boutons</h3>
+                    <div style="float: left; padding: 5px;">
+                        <a href="#" class="btn">button</a>
+                        <a href="#" class="btn btn-primary">primary</a>
+                        <a href="#" class="btn btn-danger">danger</a>
+                        <a href="#" class="btn btn-warning">warning</a>
+                        <a href="#" class="btn btn-success">success</a>
+                        <a href="#" class="btn btn-info">info</a>
+                        <a href="#" class="btn btn-inverse">inverse</a>
+                        <a href="#" class="btn"><i class="icon-search"></i> search</a>
+                        <a href="#" class="btn btn-large">large</a>
+                        <a href="#" class="btn btn-small">small</a>
+                        <a href="#" class="btn btn-mini">mini</a>
+                    </div>
+                    <div class="clearfix"></div>
+                    
+                    <div style="float: left; padding: 5px;">
+                        <button type="button" class="btn btn-primary disabled">disabled</button>
+                        <button type="button" class="btn" data-toggle="button">Single Toggle</button>
+                        <div class="btn-group" style="display: inline;">
+                            <button class="btn">groupe</button>
+                            <button class="btn">de</button>
+                            <button class="btn">boutons</button>
+                        </div>
+                        <div class="btn-group" data-toggle="buttons-checkbox" style="display: inline;">
+                            <button type="button" class="btn">boutons</button>
+                            <button type="button" class="btn">type</button>
+                            <button type="button" class="btn">checkbox</button>
+                        </div>
+                        <div class="btn-group" data-toggle="buttons-radio" style="display: inline;">
+                            <button type="button" class="btn">boutons</button>
+                            <button type="button" class="btn">type</button>
+                            <button type="button" class="btn">radio</button>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    
+                    <div style="padding: 5px;">
+                        
+                        <div class="btn-group" style="float: left;">
+                            <button class="btn dropdown-toggle" data-toggle="dropdown">Toggle <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="btn-group" style="float: left;">
+                            <button class="btn">Dropdown</button>
+                            <button class="btn dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="btn-group" style="float: left;">
+                            <button class="btn">Right dropdown</button>
+                            <button class="btn dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                            <ul class="dropdown-menu pull-right">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="btn-group dropup" style="float: left;">
+                            <button class="btn">Dropup</button>
+                            <button class="btn dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
+                        </div>
+                          
+                        <div class="btn-group dropup" style="float: left;">
+                            <button class="btn primary">Right dropup</button>
+                            <button class="btn primary dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                            <ul class="dropdown-menu pull-right">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    
+                    <div style="padding: 5px;">
+                        <span class="label">label</span>
+                        <span class="label label-success">success</span>
+                        <span class="label label-warning">warning</span>
+                        <span class="label label-important">important</span>
+                        <span class="label label-info">info</span>
+                        <span class="label label-inverse">inverse</span>
+                    </div>
+                    
+                    <div style="padding: 5px;">
+                        <span class="badge">badge</span>
+                        <span class="badge badge-success">2</span>
+                        <span class="badge badge-warning">4</span>
+                        <span class="badge badge-important">6</span>
+                        <span class="badge badge-info">8</span>
+                        <span class="badge badge-inverse">10</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="modal">
+                <div class="span12">
+                    <h3>Modal</h3>
+                    <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none; ">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h3 id="myModalLabel">Modal Heading</h3>
+                        </div>
+                        <div class="modal-body">
+                            <h4>Text in a modal</h4>
+                            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem.</p>
+
+                            <h4>Popover in a modal</h4>
+                            <p>This <a href="#" role="button" class="btn popover-test" data-content="And here's some amazing content. It's very engaging. right?" data-original-title="A Title">button</a> should trigger a popover on hover.</p>
+
+                            <h4>Tooltips in a modal</h4>
+                            <p><a href="#" class="tooltip-test" data-original-title="Tooltip">This link</a> and <a href="#" class="tooltip-test" data-original-title="Tooltip">that link</a> should have tooltips on hover.</p>
+
+                            <hr>
+
+                            <h4>Overflowing text to show optional scrollbar</h4>
+                            <p>We set a fixed <code>max-height</code> on the <code>.modal-body</code>. Watch it overflow with all this extra lorem ipsum text we've included.</p>
+                            <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+                            <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+                            <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+                            <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn" data-dismiss="modal">Close</button>
+                            <button class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                    <a data-toggle="modal" href="#myModal" class="btn btn-primary">Launch modal</a>
+                </div>
+            </div>
+            <div class="row" id="typeahead">
+                <div class="span12">
+                    <h3>Typeahead</h3>
+                    <input type="text" class="span3" style="margin: 0 auto;" data-provide="typeahead" data-items="4" data-source="[&quot;Alabama&quot;,&quot;Alaska&quot;,&quot;Arizona&quot;,&quot;Arkansas&quot;,&quot;California&quot;,&quot;Colorado&quot;,&quot;Connecticut&quot;,&quot;Delaware&quot;,&quot;Florida&quot;,&quot;Georgia&quot;,&quot;Hawaii&quot;,&quot;Idaho&quot;,&quot;Illinois&quot;,&quot;Indiana&quot;,&quot;Iowa&quot;,&quot;Kansas&quot;,&quot;Kentucky&quot;,&quot;Louisiana&quot;,&quot;Maine&quot;,&quot;Maryland&quot;,&quot;Massachusetts&quot;,&quot;Michigan&quot;,&quot;Minnesota&quot;,&quot;Mississippi&quot;,&quot;Missouri&quot;,&quot;Montana&quot;,&quot;Nebraska&quot;,&quot;Nevada&quot;,&quot;New Hampshire&quot;,&quot;New Jersey&quot;,&quot;New Mexico&quot;,&quot;New York&quot;,&quot;North Dakota&quot;,&quot;North Carolina&quot;,&quot;Ohio&quot;,&quot;Oklahoma&quot;,&quot;Oregon&quot;,&quot;Pennsylvania&quot;,&quot;Rhode Island&quot;,&quot;South Carolina&quot;,&quot;South Dakota&quot;,&quot;Tennessee&quot;,&quot;Texas&quot;,&quot;Utah&quot;,&quot;Vermont&quot;,&quot;Virginia&quot;,&quot;Washington&quot;,&quot;West Virginia&quot;,&quot;Wisconsin&quot;,&quot;Wyoming&quot;]">
+                    Type US state
+                </div>
+            </div>
+            <div class="row" id="accordion">
+                <div class="span12">
+                    <h3>Accordion</h3>
+                    <div class="accordion" id="accordion2">
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                                    Collapsible Group Item #1
+                                </a>
+                            </div>
+                            <div id="collapseOne" class="accordion-body collapse in">
+                                <div class="accordion-inner">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+                                    Collapsible Group Item #2
+                                </a>
+                            </div>
+                            <div id="collapseTwo" class="accordion-body collapse">
+                                <div class="accordion-inner">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+                                    Collapsible Group Item #3
+                                </a>
+                            </div>
+                            <div id="collapseThree" class="accordion-body collapse">
+                                <div class="accordion-inner">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="tabs">
+                <div class="span12">
+                    <h3>Tab section</h3>
+                    <div style="margin-bottom: 18px;">
+                        <ul id="myTab" class="nav nav-tabs">
+                            <li class=""><a href="#home" data-toggle="tab">Home</a></li>
+                            <li class=""><a href="#profile" data-toggle="tab">Profile</a></li>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li class=""><a href="#dropdown1" data-toggle="tab">@fat</a></li>
+                                    <li class="active"><a href="#dropdown2" data-toggle="tab">@mdo</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div id="myTabContent" class="tab-content">
+                            <div class="tab-pane fade" id="home">
+                                <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+                            </div>
+                            <div class="tab-pane fade" id="profile">
+                                <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
+                            </div>
+                            <div class="tab-pane fade" id="dropdown1">
+                                <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
+                            </div>
+                            <div class="tab-pane fade active in" id="dropdown2">
+                                <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tabbable tabs-below" style="margin-bottom: 18px;">
+                        <div class="tab-content">
+                            <div class="tab-pane" id="tab11">
+                                <p>I'm in Section 1.</p>
+                            </div>
+                            <div class="tab-pane" id="tab12">
+                                <p>Howdy, I'm in Section 2.</p>
+                            </div>
+                            <div class="tab-pane active" id="tab13">
+                                <p>What up girl, this is Section 3.</p>
+                            </div>
+                        </div>
+                        <ul class="nav nav-tabs">
+                            <li class=""><a href="#tab11" data-toggle="tab">Section 1</a></li>
+                            <li class=""><a href="#tab12" data-toggle="tab">Section 2</a></li>
+                            <li class="active"><a href="#tab13" data-toggle="tab">Section 3</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="tabs-vertical">
+                <div class="span6">
+                    <div class="tabbable tabs-left" style="margin-bottom: 18px;">
+                        <ul class="nav nav-tabs">
+                            <li class=""><a href="#tab21" data-toggle="tab">Section 1</a></li>
+                            <li class=""><a href="#tab22" data-toggle="tab">Section 2</a></li>
+                            <li class="active"><a href="#tab23" data-toggle="tab">Section 3</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane" id="tab21">
+                                <p>I'm in Section 1.</p>
+                            </div>
+                            <div class="tab-pane" id="tab22">
+                                <p>Howdy, I'm in Section 2.</p>
+                            </div>
+                            <div class="tab-pane active" id="tab23">
+                                <p>What up girl, this is Section 3.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="span6">
+                    <div class="tabbable tabs-right" style="margin-bottom: 18px;">
+                        <ul class="nav nav-tabs">
+                            <li class=""><a href="#tab31" data-toggle="tab">Section 1</a></li>
+                            <li class=""><a href="#tab32" data-toggle="tab">Section 2</a></li>
+                            <li class="active"><a href="#tab33" data-toggle="tab">Section 3</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane" id="tab31">
+                                <p>I'm in Section 1.</p>
+                            </div>
+                            <div class="tab-pane" id="tab32">
+                                <p>Howdy, I'm in Section 2.</p>
+                            </div>
+                            <div class="tab-pane active" id="tab33">
+                                <p>What up girl, this is Section 3.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="messages">
+                <div class="span12">
+                    <h3>Messages</h3>
+                    <script>
+                        $(function() {
+                            $('a[rel="tooltip"]').tooltip();
+                            $('a[rel="popover"]').popover();
+                        });
+                    </script>
+                    <div>
+                        <a href="#" rel="tooltip" data-placement="top" data-original-title="Tooltip on top">Tooltip on top</a> - 
+                        <a href="#" rel="tooltip" data-placement="right" data-original-title="Tooltip on right">Tooltip on right</a> - 
+                        <a href="#" rel="tooltip" data-placement="bottom" data-original-title="Tooltip on bottom">Tooltip on bottom</a> - 
+                        <a href="#" rel="tooltip" data-placement="left" data-original-title="Tooltip on left">Tooltip on left</a>
+                    </div>
+                    <br/>
+                    <div>
+                        <a href="#" rel="popover" data-trigger="hover" data-placement="top" data-content="And here's some amazing content. It's very engaging. right?" data-original-title="A Title">Top popover</a> - 
+                        <a href="#" rel="popover" data-trigger="hover" data-placement="right" data-content="And here's some amazing content. It's very engaging. right?" data-original-title="A Title">Right popover</a> - 
+                        <a href="#" rel="popover" data-trigger="hover" data-placement="bottom" data-content="And here's some amazing content. It's very engaging. right?" data-original-title="A Title">Bottom popover</a> - 
+                        <a href="#" rel="popover" data-trigger="hover" data-placement="left" data-content="And here's some amazing content. It's very engaging. right?" data-original-title="A Title">Left popover</a>
+                    </div>
+                    <br/>
+                    <div class="alert alert-success">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>Well done!</strong> You successfully read this important alert message.
+                    </div>
+                    <div class="alert alert-info">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+                    </div>
+                    <div class="alert">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>Warning!</strong> Best check yo self, you're not looking too good.
+                    </div>
+                    <div class="alert alert-block alert-error fade in">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <h4 class="alert-heading">Oh snap! You got an error!</h4>
+                        <p>Change this and that and try again. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
+                        <p>
+                            <a class="btn btn-danger" href="#">Take this action</a> <a class="btn" href="#">Or do this</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="icons">
+                <div class="span12">
+                    <h3>Icones</h3>
+                    <ul class="the-icons clearfix">
+                        <li><i class="icon-search"></i> icon-search</li>
+                        <li><i class="icon-envelope"></i> icon-envelope</li>
+                        <li><i class="icon-heart"></i> icon-heart</li>
+                        <li><i class="icon-star"></i> icon-star</li>
+                        <li><i class="icon-star-empty"></i> icon-star-empty</li>
+                        <li><i class="icon-user"></i> icon-user</li>
+                        <li><i class="icon-ok"></i> icon-ok</li>
+                        <li><i class="icon-remove"></i> icon-remove</li>
+                        <li><i class="icon-off"></i> icon-off</li>
+                        <li><i class="icon-signal"></i> icon-signal</li>
+                        <li><i class="icon-cog"></i> icon-cog</li>
+                        <li><i class="icon-trash"></i> icon-trash</li>
+                        <li><i class="icon-home"></i> icon-home</li>
+                        <li><i class="icon-file"></i> icon-file</li>
+                        <li><i class="icon-time"></i> icon-time</li>
+                        <li><i class="icon-download-alt"></i> icon-download-alt</li>
+                        <li><i class="icon-download"></i> icon-download</li>
+                        <li><i class="icon-upload"></i> icon-upload</li>
+                        <li><i class="icon-inbox"></i> icon-inbox</li>
+                        <li><i class="icon-play-circle"></i> icon-play-circle</li>
+                        <li><i class="icon-repeat"></i> icon-repeat</li>
+                        <li><i class="icon-refresh"></i> icon-refresh</li>
+                        <li><i class="icon-lock"></i> icon-lock</li>
+                        <li><i class="icon-tag"></i> icon-tag</li>
+                        <li><i class="icon-tags"></i> icon-tags</li>
+                        <li><i class="icon-pencil"></i> icon-pencil</li>
+                        <li><i class="icon-map-marker"></i> icon-map-marker</li>
+                        <li><i class="icon-edit"></i> icon-edit</li>
+                        <li><i class="icon-share"></i> icon-share</li>
+                        <li><i class="icon-check"></i> icon-check</li>
+                        <li><i class="icon-move"></i> icon-move</li>
+                        <li><i class="icon-play"></i> icon-play</li>
+                        <li><i class="icon-stop"></i> icon-stop</li>
+                        <li><i class="icon-chevron-left"></i> icon-chevron-left</li>
+                        <li><i class="icon-chevron-right"></i> icon-chevron-right</li>
+                        <li><i class="icon-plus-sign"></i> icon-plus-sign</li>
+                        <li><i class="icon-minus-sign"></i> icon-minus-sign</li>
+                        <li><i class="icon-remove-sign"></i> icon-remove-sign</li>
+                        <li><i class="icon-ok-sign"></i> icon-ok-sign</li>
+                        <li><i class="icon-question-sign"></i> icon-question-sign</li>
+                        <li><i class="icon-info-sign"></i> icon-info-sign</li>
+                        <li><i class="icon-remove-circle"></i> icon-remove-circle</li>
+                        <li><i class="icon-ok-circle"></i> icon-ok-circle</li>
+                        <li><i class="icon-ban-circle"></i> icon-ban-circle</li>
+                        <li><i class="icon-arrow-left"></i> icon-arrow-left</li>
+                        <li><i class="icon-arrow-right"></i> icon-arrow-right</li>
+                        <li><i class="icon-arrow-up"></i> icon-arrow-up</li>
+                        <li><i class="icon-arrow-down"></i> icon-arrow-down</li>
+                        <li><i class="icon-share-alt"></i> icon-share-alt</li>
+                        <li><i class="icon-plus"></i> icon-plus</li>
+                        <li><i class="icon-minus"></i> icon-minus</li>
+                        <li><i class="icon-asterisk"></i> icon-asterisk</li>
+                        <li><i class="icon-exclamation-sign"></i> icon-exclamation-sign</li>
+                        <li><i class="icon-eye-open"></i> icon-eye-open</li>
+                        <li><i class="icon-eye-close"></i> icon-eye-close</li>
+                        <li><i class="icon-warning-sign"></i> icon-warning-sign</li>
+                        <li><i class="icon-calendar"></i> icon-calendar</li>
+                        <li><i class="icon-comment"></i> icon-comment</li>
+                        <li><i class="icon-chevron-up"></i> icon-chevron-up</li>
+                        <li><i class="icon-chevron-down"></i> icon-chevron-down</li>
+                        <li><i class="icon-retweet"></i> icon-retweet</li>
+                        <li><i class="icon-folder-close"></i> icon-folder-close</li>
+                        <li><i class="icon-folder-open"></i> icon-folder-open</li>
+                        <li><i class="icon-certificate"></i> icon-certificate</li>
+                        <li><i class="icon-thumbs-up"></i> icon-thumbs-up</li>
+                        <li><i class="icon-thumbs-down"></i> icon-thumbs-down</li>
+                        <li><i class="icon-hand-right"></i> icon-hand-right</li>
+                        <li><i class="icon-hand-left"></i> icon-hand-left</li>
+                        <li><i class="icon-hand-up"></i> icon-hand-up</li>
+                        <li><i class="icon-hand-down"></i> icon-hand-down</li>
+                        <li><i class="icon-circle-arrow-right"></i> icon-circle-arrow-right</li>
+                        <li><i class="icon-circle-arrow-left"></i> icon-circle-arrow-left</li>
+                        <li><i class="icon-circle-arrow-up"></i> icon-circle-arrow-up</li>
+                        <li><i class="icon-circle-arrow-down"></i> icon-circle-arrow-down</li>
+                        <li><i class="icon-wrench"></i> icon-wrench</li>
+                        <li><i class="icon-tasks"></i> icon-tasks</li>
+                        <li><i class="icon-filter"></i> icon-filter</li>
+                    </ul>
+                    Pour plus de choix, voir aussi <a href="http://fortawesome.github.com/Font-Awesome/" target="Font-Awesome">Font-Awesome</a>.
+                </div>
+            </div>
+            <div class="row" id="progress-bar">
+                <div class="span12">
+                    <h3>Progress bar</h3>
+                    <div class="progress progress-striped active">
+                        <div class="bar" style="width: 40%;"></div>
+                    </div>
+                    <div class="progress">
+                        <div class="bar bar-success" style="width: 35%;"></div>
+                        <div class="bar bar-warning" style="width: 20%;"></div>
+                        <div class="bar bar-danger" style="width: 10%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <hr>
+
+        <footer>
+            <p>&copy; Company 2012</p>
+        </footer>
+
+    </div> <!-- /container -->
+</body>
+</html>

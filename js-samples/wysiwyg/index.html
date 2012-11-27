@@ -1,0 +1,83 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>Wysiwyg</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<meta name="viewport" content="width=device-width">
+
+	<link rel="stylesheet" href="../../css/bootstrap.min.css">
+	<style>
+	body {
+	  padding-top: 60px;
+	  padding-bottom: 40px;
+	}
+	</style>
+	<link rel="stylesheet" href="../../css/bootstrap-responsive.min.css">
+    
+    <script src="../../js/libs/jquery-1.7.2.min.js"></script>
+    <script src="../../js/libs/bootstrap/bootstrap.min.js"></script>
+    
+    <!-- wysihtml5 -->
+    <link href="wysihtml5/bootstrap-wysihtml5.css" rel="stylesheet" type="text/css"></link>
+    <script src="wysihtml5/wysihtml5-0.3.0.min.js"></script>
+    <script src="wysihtml5/bootstrap-wysihtml5.js"></script>
+    
+
+</head>
+<body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">Wysiwyg</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li><a href="../../js-samples.html">Home</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+        <div class="">
+            <div class="row" id="wysihtml5">
+                <div class="span12">
+                    <h3>Wysihtml5 <small><a href="http://jhollingworth.github.com/bootstrap-wysihtml5/" target="wysihtml5">site officiel</a></small></h3>
+                    <div class="demo">
+                        <textarea class="textarea" placeholder="Enter text ..." style="width: 810px; height: 200px"></textarea>
+                    </div>
+                    <script>
+                        $(document).ready(function() {
+                            $('#wysihtml5 .textarea').wysihtml5();
+                        });
+                    </script>
+                </div>
+            </div>
+            <div class="row" id="wysihtml5">
+                <div class="span12">
+                    <h3>TinyEditor <small><a href="http://www.scriptiny.com/2010/02/javascript-wysiwyg-editor/" target="tinyEditor">site officiel</a></small></h3>
+                    <div class="demo">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+        <footer>
+            <p>&copy; Company 2012</p>
+        </footer>
+
+    </div> <!-- /container -->
+</body>
+</html>

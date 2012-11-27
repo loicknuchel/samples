@@ -4,24 +4,25 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-	<title>Front-end samples</title>
+	<title>Switchs</title>
 	<meta name="description" content="">
 	<meta name="author" content="">
 
 	<meta name="viewport" content="width=device-width">
 
-	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../css/bootstrap.min.css">
 	<style>
 	body {
 	  padding-top: 60px;
 	  padding-bottom: 40px;
 	}
-    dl dd {
-        margin-bottom: 10px;
-    }
+  iframe {
+    border: none;
+  }
 	</style>
-	<link rel="stylesheet" href="css/bootstrap-responsive.min.css">
-	
+	<link rel="stylesheet" href="../../css/bootstrap-responsive.min.css">
+    
+  <script src="../../js/libs/jquery-1.7.2.min.js"></script>
 </head>
 <body>
   <div class="navbar navbar-fixed-top">
@@ -32,13 +33,10 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </a>
-        <a class="brand" href="#">Front-end Samples</a>
+        <a class="brand" href="#">Switchs</a>
         <div class="nav-collapse">
           <ul class="nav">
-            <li class="active"><a href="index.html">Home</a></li>
-            <li><a href="js-samples.html">JS samples</a></li>
-            <li><a href="css-samples.html">CSS samples</a></li>
-            <li><a href="experiments.html">experiments</a></li>
+            <li><a href="../../css-samples.html">Home</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -46,24 +44,16 @@
   </div>
 
   <div class="container">
-    <div class="row">
-        <div class="span12">
-            <h2>Samples</h2>
-            <p>
-                Here a example of front-end implementations
-            </p>
-        </div>
+    <div class="row" id="sample1">
+      <div class="span5">
+        <iframe src="toggle-swiches.html?embeded=true" style="width: 100%; height: 220px;"></iframe>
+        <a href="toggle-swiches.html">Pleine page</a>
+      </div>
+      <div class="span7">
+        <iframe src="multi-swiches.html?embeded=true" style="width: 100%; height: 220px;"></iframe>
+        <a href="multi-swiches.html">Pleine page</a>
+      </div>
     </div>
-  
-    <hr>
-
-    <footer>
-      <p>&copy; Company 2012</p>
-    </footer>
-
   </div> <!-- /container -->
-    
-  <script src="js/libs/jquery-1.7.2.min.js"></script>
-  <script src="js/libs/bootstrap/bootstrap.min.js"></script>
 </body>
 </html>
