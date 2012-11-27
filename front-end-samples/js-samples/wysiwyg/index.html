@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-	<title>Notifications</title>
+	<title>Wysiwyg</title>
 	<meta name="description" content="">
 	<meta name="author" content="">
 
@@ -20,8 +20,12 @@
 	<link rel="stylesheet" href="../../css/bootstrap-responsive.min.css">
     
     <script src="../../js/libs/jquery-1.7.2.min.js"></script>
+    <script src="../../js/libs/bootstrap/bootstrap.min.js"></script>
     
-    <!-- library -->
+    <!-- wysihtml5 -->
+    <link href="wysihtml5/bootstrap-wysihtml5.css" rel="stylesheet" type="text/css"></link>
+    <script src="wysihtml5/wysihtml5-0.3.0.min.js"></script>
+    <script src="wysihtml5/bootstrap-wysihtml5.js"></script>
     
 
 </head>
@@ -34,7 +38,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">Notifications</a>
+          <a class="brand" href="#">Wysiwyg</a>
           <div class="nav-collapse">
             <ul class="nav">
               <li><a href="../../js-samples.html">Home</a></li>
@@ -46,27 +50,24 @@
 
     <div class="container">
         <div class="">
-            <div class="row" id="noty">
+            <div class="row" id="wysihtml5">
                 <div class="span12">
-                    <h3>Noty <small><a href="http://needim.github.com/noty/" target="noty">site officiel</a></small></h3>
-                    <div>
-                    
+                    <h3>Wysihtml5 <small><a href="http://jhollingworth.github.com/bootstrap-wysihtml5/" target="wysihtml5">site officiel</a></small></h3>
+                    <div class="demo">
+                        <textarea class="textarea" placeholder="Enter text ..." style="width: 810px; height: 200px"></textarea>
                     </div>
+                    <script>
+                        $(document).ready(function() {
+                            $('#wysihtml5 .textarea').wysihtml5();
+                        });
+                    </script>
                 </div>
             </div>
-            <div class="row" id="noty">
+            <div class="row" id="wysihtml5">
                 <div class="span12">
-                    <h3>Noty fork <small><a href="http://craga89.github.com/notyfy/" target="notyfy">site officiel</a></small></h3>
-                    <div>
-                    
-                    </div>
-                </div>
-            </div>
-            <div class="row" id="pnotify">
-                <div class="span12">
-                    <h3>Pines Notify <small><a href="http://pinesframework.org/pnotify/" target="pnotify">site officiel</a></small></h3>
-                    <div>
-                    
+                    <h3>TinyEditor <small><a href="http://www.scriptiny.com/2010/02/javascript-wysiwyg-editor/" target="tinyEditor">site officiel</a></small></h3>
+                    <div class="demo">
+                        
                     </div>
                 </div>
             </div>

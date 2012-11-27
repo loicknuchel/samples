@@ -46,6 +46,7 @@
     <!-- bootstrap my tests -->
 	<link rel="stylesheet" href="bootstrap-mytests/mytests.css" />
     <script src="bootstrap-mytests/bootstrap-mytests.js"></script>
+    <script src="bootstrap-mytests/bootstrap-custompicker.js"></script>
     
 </head>
 <body>
@@ -200,8 +201,9 @@
                     <div class="pull-right">
                         <a href="#" class="btn open-comment" data-text-name="comment1" data-submit-class="btn-danger" data-submit-text="Supprimer">click here</a>
                         <a href="#" class="btn open-comment" data-text-name="comment2" data-text-placeholder="No comment here..." data-submit-text="Enregistrer" data-cancel-text="Annuler" data-submit-class="" data-cancel-class="btn-primary">click here</a>
-                        <a href="#" class="btn open-comment" data-text-name="comment3" data-submit-text="Ok" data-cancel-text="Quit">click here</a>
+                        <a href="#" class="btn open-comment2" data-text-name="comment3" data-submit-text="Ok" data-cancel-text="Quit">click here</a>
                         <a href="#" class="btn open-comment">click here</a>
+                        <a href="#" class="btn custom-picker">click here (custom)</a>
                         <script>
                             $(document).ready(function() {
                                 $('.open-comment').each(function(){
@@ -218,6 +220,45 @@
                                         cancelClass: $(this).attr('data-cancel-class'),
                                         leftOffset: $(this).outerWidth()/2 - 12,
                                         topOffset: 0
+                                    });
+                                });
+                                $('.open-comment2').each(function(){
+                                    $(this).customPicker({
+                                        popupClass: '',
+                                        parentBlock: $('body > .container'),
+                                        formUrl: $(this).attr('data-form-url'), 
+                                        formMethod: $(this).attr('data-form-method'),
+                                        submitText: $(this).attr('data-submit-text'),
+                                        cancelText: $(this).attr('data-cancel-text'),
+                                        submitClass: $(this).attr('data-submit-class'),
+                                        cancelClass: $(this).attr('data-cancel-class'),
+                                        leftOffset: $(this).outerWidth()/2 - 12,
+                                        topOffset: 0,
+                                        formContent: '<textarea name="'+$(this).attr('data-text-name')+'" placeholder="'+$(this).attr('data-text-placeholder')+'"></textarea><br/>'
+                                    });
+                                });
+                                $('.custom-picker').each(function(){
+                                    $(this).customPicker({
+                                        popupClass: '',
+                                        parentBlock: $('body > .container'),
+                                        formUrl: $(this).attr('data-form-url'), 
+                                        formMethod: $(this).attr('data-form-method'),
+                                        submitText: $(this).attr('data-submit-text'),
+                                        cancelText: $(this).attr('data-cancel-text'),
+                                        submitClass: $(this).attr('data-submit-class'),
+                                        cancelClass: $(this).attr('data-cancel-class'),
+                                        leftOffset: $(this).outerWidth()/2 - 12,
+                                        topOffset: 0,
+                                        formContent: '<input type="text" name="destinataire" placeholder="destinataire" /><br/>'
+                                                     +'<textarea name="mail" placeholder="mail" style="width: 350px; height: 190px;"></textarea>',
+                                        onShow: function(popup){
+                                            var mail = popup.find('.content textarea');
+                                            mail.val('Bonjour,\n\n'
+                                                +'Pourriez-vous intervenir sur la demande ?\n'
+                                                +'Elle se trouve à l\'adresse : '+window.location+'\n\n'
+                                                +'Cordialement,\n');
+                                            popup.find('.content input').focus();
+                                        }
                                     });
                                 });
                             });
