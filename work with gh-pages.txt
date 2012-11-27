@@ -1,0 +1,5 @@
+git checkout gh-pages
+# modifications
+git commit -a -m "mes modifs"
+git push origin gh-pages
+git checkout master
